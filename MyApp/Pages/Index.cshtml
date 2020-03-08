@@ -1,0 +1,32 @@
+﻿@page
+@model MyApp.IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<h1>MyApp</h1>
+
+<div id="app">
+
+    <textarea class="form-control" v-model='text' v-on:keyup='countChars()'></textarea>
+    <span>{{count}}</span>
+
+
+</div>
+
+@section scripts{
+    <script src="~/lib/vue/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                text: "",
+                count: 0
+            }, methods: {
+                countChars: function () {
+                    this.count = this.text.length;
+                }
+            }
+        });
+    </script>
+}
