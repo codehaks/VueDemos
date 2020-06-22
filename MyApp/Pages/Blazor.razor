@@ -1,0 +1,30 @@
+﻿@page "/blazor"
+@{
+}
+
+
+<h1>MyApp</h1>
+
+<div id="app">
+
+    <textarea class="form-control" @bind="Text" @onkeyup=""></textarea>
+    <span>@Count</span>
+
+
+</div>
+
+@code
+{
+    private int Count { get; set; }
+    private string Text { get; set; }
+
+    protected override void OnInitialized()
+    {
+        Count = 0;
+    }
+
+    private void CountChars()
+    {
+        Count = Text.Length;
+    }
+ }

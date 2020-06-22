@@ -1,0 +1,14 @@
+﻿@page "/counter"
+
+
+<h1>Counter</h1>
+
+<input class="form-control" @bind="@Text" @bind:event="oninput"/>
+<span>@Text.Length</span>
+
+@code {
+
+    private string Text = "Hello";
+  
+}
+

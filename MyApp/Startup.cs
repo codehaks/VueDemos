@@ -29,7 +29,10 @@ namespace MyApp
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseBlazorFrameworkFiles();
             app.UseStaticFiles();
+            
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
